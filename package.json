@@ -1,0 +1,29 @@
+{
+  "name": "projeto20-repoprovas",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "jest.config.js",
+  "scripts": {
+    "dev":"nodemon src/server.ts",
+    "test": "npx dotenv -e .env.test prisma migrate dev && prisma db seed && cross-env NODE_OPTIONS=--experimental-vm-modules dotenv -e .env.test jest -i"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts "
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/supertest": "^2.0.12",
+    "supertest": "^6.2.4"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.3.0",
+    "bcrypt": "^5.0.1",
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^6.0.0",
+    "express-async-errors": "^3.1.1",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
